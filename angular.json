@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "tests-utilities-lib": {
+      "root": "projects/tests-utilities-lib",
+      "sourceRoot": "projects/tests-utilities-lib/src",
+      "projectType": "library",
+      "prefix": "amer",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tests-utilities-lib/tsconfig.lib.json",
+            "project": "projects/tests-utilities-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/tests-utilities-lib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tests-utilities-lib/src/test.ts",
+            "tsConfig": "projects/tests-utilities-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/tests-utilities-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tests-utilities-lib/tsconfig.lib.json",
+              "projects/tests-utilities-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "tests-utilities-lib-app"

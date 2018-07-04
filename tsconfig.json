@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "tests-utilities-lib": [
+        "dist/tests-utilities-lib"
+      ],
+      "tests-utilities-lib/*": [
+        "dist/tests-utilities-lib/*"
+      ]
+    }
   }
 }
